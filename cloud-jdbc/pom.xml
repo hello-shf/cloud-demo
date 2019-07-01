@@ -14,7 +14,8 @@
     <name>${project.artifactId}</name>
     <description>Demo project for Spring Boot</description>
     <modules>
-        <module>cloud-jdbc-device</module>
+        <module>cloud-jdbc-demo</module>
+        <module>cloud-jdbc-user</module>
     </modules>
     <dependencies>
         <dependency>
