@@ -1,0 +1,24 @@
+server:
+  port: 8050
+spring:
+  application:
+    name: cloud-jdbc-device
+  datasource:
+    url: jdbc:mysql://localhost:3306/security?characterEncoding=UTF-8&useUnicode=true&useSSL=false
+    username: root
+    password:
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyComponentPathImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6060/eureka/

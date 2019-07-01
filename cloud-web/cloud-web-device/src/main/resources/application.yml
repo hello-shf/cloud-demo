@@ -1,0 +1,24 @@
+server:
+  port: 8020
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6060/eureka/
+  instance:
+    prefer-ip-address: true
+spring:
+  application:
+    name: cloud-web-device
+feign:
+  hystrix:
+    enabled: true
+management:
+  server:
+    port: 7001
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+      base-path: /monitor
+    health:
+      show-details: always

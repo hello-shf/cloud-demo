@@ -1,0 +1,11 @@
+server:
+  port: 6060
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:${server.port}/eureka
+  instance:
+    prefer-ip-address: true
+spring:
+  application:
+    name: eureka-server

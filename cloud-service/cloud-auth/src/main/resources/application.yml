@@ -1,0 +1,44 @@
+server:
+  port: 8030
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6060/eureka/
+  instance:
+    prefer-ip-address: true
+spring:
+  application:
+    name: cloud-auth
+  datasource:
+    url: jdbc:mysql://localhost:3306/security?characterEncoding=utf8&useSSL=false&serverTimezone=GMT
+    username: root
+    password:
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    database: mysql
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  redis:
+    database: 1
+    host: localhost
+    port: 6379
+    timeout: 500
+    jedis:
+      pool:
+        max-idle: 8
+        min-idle: 0
+        max-active: 8
+        max-wait: -1ms
+
+jwt:
+  tokenHead: Bearer
+  header: Authorization
+  expiration: 1800
+  secret: mySecret
+  route:
+    authentication:
+      path: auth/login
+      refresh: auth/refresh
+      register: \auth/register\
